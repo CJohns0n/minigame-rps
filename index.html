@@ -1,0 +1,150 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      
+        Mini Games Gallore! &middot; 
+      
+    </title>
+
+    
+      <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
+      <link href="assets/css/toolkit-startup.css" rel="stylesheet">
+      <link href="assets/css/application-startup.css" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      
+    
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      /* …curses ios, etc… */
+      @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+        body {
+          width: 1px;
+          min-width: 100%;
+          *width: 100%;
+        }
+        #stage {
+          height: 1px;
+          overflow: auto;
+          min-height: 100vh;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+        .dropdown {
+            margin-top: 20px;
+        }
+        .container {
+            text-align: center;
+        }
+        .rps {
+            float: left;
+            margin: 15px;
+        }
+    </style>
+  </head>
+
+
+    <body>
+        <div class="container">
+            <h1 id="header1">Welcome to the Game Room!</h1>
+            <h5 id="explainer">If you run into any issues with the games just refresh the page and start over.</h5>
+        </div>
+        <div class="container">
+            
+            <div class="dropdown rps">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="rpsSelect" data-toggle="dropdown">
+                    Rock, Paper or Scissors?
+                </button>
+                <div class="dropdown-menu">
+                    <button class="dropdown-item" type="button" id="rock">Rock</button>
+                    <button class="dropdown-item" type="button" id="paper">Paper</button>
+                    <button class="dropdown-item" type="button" id="scissors">Scissors</button>
+                </div>
+            </div>
+            <div class="rps">Wins
+                <p id="winRps">Your win counter will display here</p>
+                <p id="lossRps"></p>
+            </div>
+        </div>
+        
+        
+        <script type="text/javascript">
+            
+            var userInput;
+            var cpuInput;
+            var score = "0";
+            
+            $("#rock").click(function() {
+                userInput = "rock";
+                genCPUInput();
+            })
+            $("#paper").click(function() {
+                userInput = "paper";
+                genCPUInput();
+            })
+            $("#scissors").click(function() {
+                userInput = "scissors";
+                genCPUInput();
+            })
+            
+            function genCPUInput() {
+                cpuInput = Math.floor(Math.random() * 3)
+                
+                if (cpuInput === 0) {
+                    if (userInput === "rock") {
+                        alert("Draw!");
+                        
+                    } else if (userInput === "paper") {
+                        score++; 
+                        alert("You Win!");
+                        
+                    } else if (userInput === "scissors") {
+                        alert("You Lose!");
+                    }
+                } else if (cpuInput === 1) {
+                    if (userInput === "paper") {
+                        alert("Draw!");
+                    } else if (userInput === "scissors") {
+                        score++;
+                        alert("You Win!");
+                        
+                    } else if (userInput === "rock") {
+                        alert("You Lose!");
+                    }
+                } else if (cpuInput === 2) {
+                    if (userInput === "scissors") {
+                        alert("Draw!");
+                    } else if (userInput === "rock") {
+                        score++; 
+                        alert("You Win!");
+                        
+                    } else if (userInput === "paper") {
+                        alert("You Lose!");
+                    }
+                } else {
+                    alert("You Lose!");
+                }  
+                document.getElementById("winRps").innerHTML = score;
+            }
+            
+            
+            
+        </script>
+    </body>
+</html>
+
