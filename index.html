@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Darwin">
 
     <title>
       
@@ -47,14 +47,107 @@
       }
         .dropdown {
             margin-top: 20px;
+            
         }
         .container {
             text-align: center;
+            
+        }
+        .container2 {
+            text-align: center;
+            
+            
+            
+            
+        }
+        .tic {
+            border: 1px solid black;
+            border-color: black;
+            width: 50px;
+            height: 50px;
+            
+        }
+        .crosshatch {
+            height: 50px;
+            width: 151px;
+            display: flex;
+            align-content: center;
+            
         }
         .rps {
-            float: left;
             margin: 15px;
         }
+        #topLeft {
+            border-left: none;
+            border-top: none;
+        }
+        #topMid {
+            
+            border-top: none;
+        }
+        #topRight {
+            border-right: none;
+            border-top: none;
+        }
+        #midLeft {
+            border-left: none;
+            
+        }
+        #midMid {
+            
+        }
+        #midRight {
+            border-right: none;
+        }
+        #bottomLeft {
+            border-left: none;
+            border-bottom: none;
+        }
+        #bottomMid {
+            border-bottom: none;
+            
+        }
+        #bottomRight {
+            border-right: none;
+            border-bottom: none;
+        }
+        #tlxo {
+            font-size: 180%;
+            display: none;
+        }
+        #tmxo {
+            font-size: 180%;
+            display: none;
+        }
+        #trxo {
+            font-size: 180%;
+            display: none;
+        }
+        #mlxo {
+            font-size: 180%;
+            display: none;
+        }
+        #mmxo {
+            font-size: 180%;
+            display: none;
+        }
+        #mrxo {
+            font-size: 180%;
+            display: none;
+        }
+        #blxo {
+            font-size: 180%;
+            display: none;
+        }
+        #bmxo {
+            font-size: 180%;
+            display: none;
+        }
+        #brxo {
+            font-size: 180%;
+            display: none;
+        }
+        
     </style>
   </head>
 
@@ -66,7 +159,7 @@
         </div>
         <div class="container">
             
-            <div class="dropdown rps">
+            <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" id="rpsSelect" data-toggle="dropdown">
                     Rock, Paper or Scissors?
                 </button>
@@ -81,6 +174,23 @@
                 <p id="lossRps"></p>
             </div>
         </div>
+        <div class="container2">
+            <div class="crosshatch">
+                <div class="tic" id="topLeft"><p id="tlxo">X</p></div>
+                <div class="tic" id="topMid"><p id="tmxo">X</p></div>
+                <div class="tic" id="topRight"><p id="trxo">X</p></div>
+            </div>
+            <div class="crosshatch">
+                <div class="tic" id="midLeft"><p id="mlxo">X</p></div>
+                <div class="tic" id="midMid"><p id="mmxo">X</p></div>
+                <div class="tic" id="midRight"><p id="mrxo">X</p></div>
+            </div>
+           <div class="crosshatch">     
+                <div class="tic" id="bottomLeft"><p id="blxo">X</p></div>
+                <div class="tic" id="bottomMid"><p id="bmxo">X</p></div>
+                <div class="tic" id="bottomRight"><p id="brxo">X</p></div>
+            </div>
+        </div>
         
         
         <script type="text/javascript">
@@ -88,6 +198,17 @@
             var userInput;
             var cpuInput;
             var score = "0";
+            var topLeftShow = false;
+            var topMidShow = false;
+            var topRightShow = false;
+            var midLeftShow = false;
+            var midMidShow = false;
+            var midRightShow = false;
+            var botLeftShow = false;
+            var botmidShow = false;
+            var botRightShow = false;
+            
+
             
             $("#rock").click(function() {
                 userInput = "rock";
@@ -142,8 +263,140 @@
                 document.getElementById("winRps").innerHTML = score;
             }
             
+            $("#topLeft").click(function() {
+                
+                document.getElementById("tlxo").style.display = "block";
+                topLeftShow = true;
+                cpuTicMove();
+                })
             
+            $("#topMid").click(function() {
+                
+                document.getElementById("tmxo").style.display = "block";
+                topMidShow = true;
+                cpuTicMove();
+                })
+            $("#topRight").click(function() {
+                
+                document.getElementById("trxo").style.display = "block";
+                topRightShow = true;
+                cpuTicMove();
+                })
+            $("#midLeft").click(function() {
+                
+                document.getElementById("mlxo").style.display = "block";
+                midLeftShow = true;
+                cpuTicMove();
+                })
+            $("#midMid").click(function() {
+                
+                document.getElementById("mmxo").style.display = "block";
+                midMidShow = true;
+                cpuTicMove();
+                })
+            $("#midRight").click(function() {
+                
+                document.getElementById("mrxo").style.display = "block";
+                midRightShow = true;
+                cpuTicMove();
+                })
+            $("#bottomLeft").click(function() {
+                
+                document.getElementById("blxo").style.display = "block";
+                botLeftShow = true;
+                cpuTicMove();
+                })
+            $("#bottomMid").click(function() {
+                
+                document.getElementById("bmxo").style.display = "block";
+                botmidShow = true;
+                cpuTicMove();
+                })
+            $("#bottomRight").click(function() {
+                
+                document.getElementById("brxo").style.display = "block";
+                botRightShow = true;
+                cpuTicMove();
+                })
             
+            function cpuTicMove() {
+                
+                if (midMidShow === false) {
+                    document.getElementById("mmxo").style.display = "block";
+                    document.getElementById("mmxo").innerHTML = "O";
+                    midMidShow = true;
+                
+                } else {
+                    cpuMove = Math.floor(Math.random() * 8);
+                    if (cpuMove === 0) {
+                        if (topLeftShow === false) {
+                            document.getElementById("tlxo").style.display = "block";
+                            document.getElementById("tlxo").innerHTML = "O";
+                            topLeftShow = true;
+                        } else {
+                            cpuTicMove();
+                        }
+                    } else if (cpuMove === 1) {
+                        if (topMidShow === false) {
+                            document.getElementById("tmxo").style.display = "block";
+                            document.getElementById("tmxo").innerHTML = "O";
+                            topMidShow = true;
+                        } else {
+                            cpuTicMove();
+                        }
+                    } else if (cpuMove === 2) {
+                        if (topRightShow === false) {
+                            document.getElementById("trxo").style.display = "block";
+                            document.getElementById("trxo").innerHTML = "O";
+                            topRightShow = true;
+                        } else {
+                            cpuTicMove();
+                        }
+                    } else if (cpuMove === 3) {
+                        if (midLeftShow === false) {
+                            document.getElementById("mlxo").style.display = "block";
+                            document.getElementById("mlxo").innerHTML = "O";
+                            midLeftShow = true;
+                        } else {
+                            cpuTicMove();
+                        }
+                    } else if (cpuMove === 4) {
+                        if (midRightShow === false) {
+                            document.getElementById("mrxo").style.display = "block";
+                            document.getElementById("mrxo").innerHTML = "O";
+                            midRightShow = true;
+                        } else {
+                            cpuTicMove();
+                        }
+                    } else if (cpuMove === 5) {
+                        if (botLeftShow === false) {
+                            document.getElementById("blxo").style.display = "block";
+                            document.getElementById("blxo").innerHTML = "O";
+                            botLeftShow = true;
+                        } else {
+                            cpuTicMove();
+                        }
+                    } else if (cpuMove === 6) {
+                        if (botmidShow === false) {
+                            document.getElementById("bmxo").style.display = "block";
+                            document.getElementById("bmxo").innerHTML = "O";
+                            botmidShow = true;
+                        } else {
+                            cpuTicMove();
+                        }
+                    } else if (cpuMove === 7) {
+                        if (botRightShow === false) {
+                            document.getElementById("brxo").style.display = "block";
+                            document.getElementById("brxo").innerHTML = "O";
+                            botRightShow = true;
+                        } else {
+                            cpuTicMove();
+                        }
+                    } else {
+                        cpuTicMove();
+                    }
+                }
+            }
         </script>
     </body>
 </html>
