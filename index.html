@@ -56,9 +56,7 @@
         .container2 {
             text-align: center;
             
-            
-            
-            
+  
         }
         .tic {
             border: 1px solid black;
@@ -147,7 +145,26 @@
             font-size: 180%;
             display: none;
         }
-        
+        .hidden {
+            display: none;
+        }
+        #compThrow {
+            font-size: 125%;
+            
+        }
+        #userThrow {
+            font-size: 125%;
+        }
+        #winDeclare {
+            font-size: 200%;
+            width: 40%;
+        }
+        .rps-results {
+            display: flex;
+            text-align: center;
+            align-content: center;
+            
+        }
     </style>
   </head>
 
@@ -172,6 +189,19 @@
             <div class="rps">Wins
                 <p id="winRps">Your win counter will display here</p>
                 <p id="lossRps"></p>
+            </div>
+            <div class="rps-results">
+                <p id="userThrow">Your Throw
+                    <img class="hidden" id="rockimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtIt1hzff85_i5FaB8n_3NkNN0vKkAxvCxaO0AnysgWw1pyWw3Q">
+                    <img class="hidden" id="paperimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTP4Pl9I8fbH2syR4QJxvADUUJa8ArerAXVW3otvai2leKzd_g">
+                    <img class="hidden" id="scissorsimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLNpEOOD_6_XU3OlJYAkciL7Y1YYM0lWgSrJRb7fFfH9zkb9jc">
+                </p>
+                <p id="winDeclare"></p>
+                <p id="compThrow">Opponent's Throw
+                    <img class="hidden" id="rockimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtIt1hzff85_i5FaB8n_3NkNN0vKkAxvCxaO0AnysgWw1pyWw3Q">
+                    <img class="hidden" id="paperimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTP4Pl9I8fbH2syR4QJxvADUUJa8ArerAXVW3otvai2leKzd_g">
+                    <img class="hidden" id="scissorsimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLNpEOOD_6_XU3OlJYAkciL7Y1YYM0lWgSrJRb7fFfH9zkb9jc">
+                </p>
             </div>
         </div>
         <div class="container2">
@@ -213,52 +243,76 @@
             $("#rock").click(function() {
                 userInput = "rock";
                 genCPUInput();
+                $("#paperimg").addClass("hidden");
+                $("#rockimg").removeClass("hidden");
+                $("#scissorsimg").addClass("hidden");
             })
             $("#paper").click(function() {
                 userInput = "paper";
                 genCPUInput();
+                $("#paperimg").removeClass("hidden");
+                $("#rockimg").addClass("hidden");
+                $("#scissorsimg").addClass("hidden");
             })
             $("#scissors").click(function() {
                 userInput = "scissors";
                 genCPUInput();
+                $("#paperimg").addClass("hidden");
+                $("#rockimg").addClass("hidden");
+                $("#scissorsimg").removeClass("hidden");
             })
             
             function genCPUInput() {
                 cpuInput = Math.floor(Math.random() * 3)
                 
                 if (cpuInput === 0) {
+                    $("#rockimg2").removeClass("hidden");
+                    $("#paperimg2").addClass("hidden");
+                    $("#scissorsimg2").addClass("hidden");
                     if (userInput === "rock") {
-                        alert("Draw!");
+                        $("#winDeclare").html("Draw!");
                         
                     } else if (userInput === "paper") {
                         score++; 
-                        alert("You Win!");
+                        $("#winDeclare").html("You Win!");
+                        
                         
                     } else if (userInput === "scissors") {
-                        alert("You Lose!");
+                        $("#winDeclare").html("You Lose!");
+                        
                     }
                 } else if (cpuInput === 1) {
+                    $("#rockimg2").addClass("hidden");
+                    $("#paperimg2").removeClass("hidden");
+                    $("#scissorsimg2").addClass("hidden");
                     if (userInput === "paper") {
-                        alert("Draw!");
+                        $("#winDeclare").html("Draw!");
                     } else if (userInput === "scissors") {
                         score++;
-                        alert("You Win!");
+                        $("#winDeclare").html("You Win!");
+                        
                         
                     } else if (userInput === "rock") {
-                        alert("You Lose!");
+                        $("#winDeclare").html("You Lose!");
+                        
                     }
                 } else if (cpuInput === 2) {
+                    $("#rockimg2").addClass("hidden");
+                    $("#paperimg2").addClass("hidden");
+                    $("#scissorsimg2").removeClass("hidden");
                     if (userInput === "scissors") {
-                        alert("Draw!");
+                        $("#winDeclare").html("Draw!");
                     } else if (userInput === "rock") {
                         score++; 
-                        alert("You Win!");
+                        $("#winDeclare").html("You Win!");
+                        
                         
                     } else if (userInput === "paper") {
-                        alert("You Lose!");
+                        $("#winDeclare").html("You Lose!");
+                        
                     }
                 } else {
-                    alert("You Lose!");
+                    alert("Things are broken, try again!");
                 }  
                 document.getElementById("winRps").innerHTML = score;
             }
