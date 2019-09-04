@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
+      <link href="assets/css/toolkit.css" rel="stylesheet">
+      <link href="assets/css/application.css" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link rel="stylesheet" href="global.css">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      
+
+</head>
+    
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark">
+            <ul class="navbar-nav gamepicker">
+                <li class="nav-item">
+
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" href="rpscissors.html">Rock Paper Scissors </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tic-tac.html"> Tic-Tac-Toe</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="guesser.html">Number Guesser</a>
+                </li>
+            </ul>
+    </nav>
+            <div class="container">
+            
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="rpsSelect" data-toggle="dropdown">
+                    Rock, Paper or Scissors?
+                </button>
+                <div class="dropdown-menu">
+                    <button class="dropdown-item" type="button" id="rock">Rock</button>
+                    <button class="dropdown-item" type="button" id="paper">Paper</button>
+                    <button class="dropdown-item" type="button" id="scissors">Scissors</button>
+                </div>
+            </div>
+            <div class="rps">Wins
+                <p id="winRps">Your win counter will display here</p>
+                <p id="lossRps"></p>
+            </div>
+            <div class="rps-results">
+                <p id="userThrow">Your Throw
+                    <img class="hidden" id="rockimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtIt1hzff85_i5FaB8n_3NkNN0vKkAxvCxaO0AnysgWw1pyWw3Q">
+                    <img class="hidden" id="paperimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTP4Pl9I8fbH2syR4QJxvADUUJa8ArerAXVW3otvai2leKzd_g">
+                    <img class="hidden" id="scissorsimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLNpEOOD_6_XU3OlJYAkciL7Y1YYM0lWgSrJRb7fFfH9zkb9jc">
+                </p>
+                <p id="winDeclare"></p>
+                <p id="compThrow">Opponent's Throw
+                    <img class="hidden" id="rockimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtIt1hzff85_i5FaB8n_3NkNN0vKkAxvCxaO0AnysgWw1pyWw3Q">
+                    <img class="hidden" id="paperimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTP4Pl9I8fbH2syR4QJxvADUUJa8ArerAXVW3otvai2leKzd_g">
+                    <img class="hidden" id="scissorsimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLNpEOOD_6_XU3OlJYAkciL7Y1YYM0lWgSrJRb7fFfH9zkb9jc">
+                </p>
+            </div>
+        </div>
+    <script src="rpscissors.js"></script>
+    
+    
+</body>
+    
+</html>
