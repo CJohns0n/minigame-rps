@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <link rel="stylesheet" href="global.css">
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-      
+      <link rel="stylesheet" href="style.css">
 
 </head>
     
@@ -23,46 +23,72 @@
                 </li>
                 <li class="nav-item">
 
-                    <a class="nav-link" href="rpscissors.html">Rock Paper Scissors </a>
+                    <a class="nav-link" href="games.html">Games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="tic-tac.html"> Tic-Tac-Toe</a>
+                    <a class="nav-link" href="calculators.html">Calculators</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="guesser.html">Number Guesser</a>
+                    <a class="nav-link" href="about.html">About</a>
                 </li>
             </ul>
     </nav>
-            <div class="container">
+    <div class="rpsplay-container">
+      <header>
+        <h1>Rock Paper Scissors!</h1>
+      </header>
             
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="rpsSelect" data-toggle="dropdown">
-                    Rock, Paper or Scissors?
-                </button>
-                <div class="dropdown-menu">
-                    <button class="dropdown-item" type="button" id="rock">Rock</button>
-                    <button class="dropdown-item" type="button" id="paper">Paper</button>
-                    <button class="dropdown-item" type="button" id="scissors">Scissors</button>
-                </div>
-            </div>
             <div class="rps">Wins
                 <p id="winRps">Your win counter will display here</p>
-                <p id="lossRps"></p>
-            </div>
-            <div class="rps-results">
-                <p id="userThrow">Your Throw
-                    <img class="hidden" id="rockimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtIt1hzff85_i5FaB8n_3NkNN0vKkAxvCxaO0AnysgWw1pyWw3Q">
-                    <img class="hidden" id="paperimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTP4Pl9I8fbH2syR4QJxvADUUJa8ArerAXVW3otvai2leKzd_g">
-                    <img class="hidden" id="scissorsimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLNpEOOD_6_XU3OlJYAkciL7Y1YYM0lWgSrJRb7fFfH9zkb9jc">
-                </p>
+            Losses
+                <p id="lossRps">Your loss counter will display here</p>
                 <p id="winDeclare"></p>
-                <p id="compThrow">Opponent's Throw
-                    <img class="hidden" id="rockimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtIt1hzff85_i5FaB8n_3NkNN0vKkAxvCxaO0AnysgWw1pyWw3Q">
-                    <img class="hidden" id="paperimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTP4Pl9I8fbH2syR4QJxvADUUJa8ArerAXVW3otvai2leKzd_g">
-                    <img class="hidden" id="scissorsimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLNpEOOD_6_XU3OlJYAkciL7Y1YYM0lWgSrJRb7fFfH9zkb9jc">
-                </p>
             </div>
-        </div>
+            <div class="guessing-area">
+                <div class="throw human-guess">
+                    <p id="userThrow">Your Throw
+                        <img class="hidden" id="rockimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtIt1hzff85_i5FaB8n_3NkNN0vKkAxvCxaO0AnysgWw1pyWw3Q">
+                        <img class="hidden" id="paperimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTP4Pl9I8fbH2syR4QJxvADUUJa8ArerAXVW3otvai2leKzd_g">
+                        <img class="hidden" id="scissorsimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLNpEOOD_6_XU3OlJYAkciL7Y1YYM0lWgSrJRb7fFfH9zkb9jc">
+                    </p>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="rpsSelect" data-toggle="dropdown">
+                            Rock, Paper or Scissors?
+                        </button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" type="button" id="rock">Rock</button>
+                            <button class="dropdown-item" type="button" id="paper">Paper</button>
+                            <button class="dropdown-item" type="button" id="scissors">Scissors</button>
+                        </div>
+                    </div>
+                </div>
+                    
+                
+                    <div class="throw computer-guess">
+                        <p id="compThrow">Opponent's Throw
+                            <img class="hidden" id="rockimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtIt1hzff85_i5FaB8n_3NkNN0vKkAxvCxaO0AnysgWw1pyWw3Q">
+                            <img class="hidden" id="paperimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTP4Pl9I8fbH2syR4QJxvADUUJa8ArerAXVW3otvai2leKzd_g">
+                            <img class="hidden" id="scissorsimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLNpEOOD_6_XU3OlJYAkciL7Y1YYM0lWgSrJRb7fFfH9zkb9jc">
+                        </p>
+                    </div>
+                
+            </div>
+        
+    </div>
+    <div class="instructions">
+      <div class="instruction">
+        <h3>Step 1</h3>
+        <p>Select an option from the dropdown. The CPU will throw at the exact same time as you!</p>
+      </div>
+      <div class="instruction">
+        <h3>Step 2</h3>
+        <p>Scissors beats paper, paper beats rock and rock beats scissors. Try and beat the CPU by winning more rounds.</p>
+      </div>
+      <div class="instruction">
+        <h3>Step 3</h3>
+        <p>To play again just make another selection from the dropdown.</p>
+      </div>
+    </div>
     <script src="rpscissors.js"></script>
     
     

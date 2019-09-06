@@ -1,5 +1,6 @@
 "use strict";
 var score = "0";
+var loss = "0";
 var userInput;
 var cpuInput;
 
@@ -41,6 +42,7 @@ $("#rock").click(function() {
                         document.getElementById("winDeclare").style.color = "limegreen";
                         
                     } else if (userInput === "scissors") {
+                        loss++;
                         $("#winDeclare").html("You Lose!");
                         document.getElementById("winDeclare").style.color = "red";
                         
@@ -58,6 +60,7 @@ $("#rock").click(function() {
                         document.getElementById("winDeclare").style.color = "limegreen";
                         
                     } else if (userInput === "rock") {
+                        loss++;
                         $("#winDeclare").html("You Lose!");
                         document.getElementById("winDeclare").style.color = "red";
                         
@@ -75,6 +78,7 @@ $("#rock").click(function() {
                         document.getElementById("winDeclare").style.color = "limegreen";
                         
                     } else if (userInput === "paper") {
+                        loss++;
                         $("#winDeclare").html("You Lose!");
                         document.getElementById("winDeclare").style.color = "red";
                         
@@ -83,4 +87,5 @@ $("#rock").click(function() {
                     alert("Things are broken, try again!");
                 }  
                 document.getElementById("winRps").innerHTML = score;
+                document.getElementById("lossRps").innerHTML = loss;
             }

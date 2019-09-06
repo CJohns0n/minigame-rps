@@ -8,7 +8,12 @@ body {
   padding: 3px;
   background-color: #fff;
 }
-
+.rpsplay-container {
+  max-width: 740px;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: flex-start;
+}
 .game-container {
   max-width: 640px;
   margin: 0 auto;
@@ -32,7 +37,14 @@ header {
   font-weight: 700;
   margin-bottom: 0px;
 }
-
+.throw {
+  min-width: 303px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 19px;
+}
 .guess {
   min-width: 303px;
   height: 328px;
@@ -47,6 +59,7 @@ header {
   justify-content: space-around;
   align-items: flex-start;
   margin-bottom: 60px;
+  
 }
 
 .guess-title {
