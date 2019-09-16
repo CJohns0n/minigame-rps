@@ -32,7 +32,7 @@
         }
         .boardContainer {
             text-align: center;
-            margin: 20px;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
             width: 100%;
@@ -49,8 +49,8 @@
             display: flex;
             align-items: auto;
             text-align: auto;
-            margin-left: 80px;
-            margin-right: 80px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .rps {
             margin: 15px;
@@ -136,7 +136,7 @@
         }
         #winDeclare {
             font-size: 200%;
-            width: 40%;
+            
         }
         .rps-results {
             display: flex;
@@ -145,7 +145,7 @@
             color: orange;
         }
         .circle {
-            
+            color: blue;
         }
         #resetButton {
             margin-bottom: 20px;
@@ -165,12 +165,18 @@
         #TTTWins {
             margin: 10px
         }
+        .gamebtn {
+            margin-top: 20px;
+        }
         .gamepicker {
         font-size: 200%;
         color: crimson;
         }
         .header {
             text-align: center;
+        }
+        .about {
+            margin: 35px;
         }
         .instructions {
           background-color: #ececec;
@@ -184,4 +190,76 @@
           padding: 2px;
           text-align: center;
         }
+        .square-land {
+            border: 1px solid black;
+            height: 85px;
+            width: 85px;
+        }
+        .square-hold {
+            height: 85px;
+            width: 851px;
+            display: flex;
+        }
+#buildingBox {
+    max-width: 1080px;
+}
+.greenStart {
+    background-color: green;
+}
+.purport {
+    background-color: mediumpurple;
+}
+.player1Piece {
+    border-radius: 50%;
+    background-color: blue;
+    height: 20px;
+    width: 20px;
+}
+.player2Piece {
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 20px solid red;
+      border-bottom: 10px solid transparent;
+    }
+ .player3Piece {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 20px solid yellow;
+      position: relative;
+    }
+    .player3Piece:after {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 20px solid yellow;
+      position: absolute;
+      content: "";
+      top: 6px;
+      left: -10px;
+    }
+ .player4Piece {
+      border-style: solid;
+      border-color: transparent transparent purple transparent;
+      border-width: 0 5px 5px 5px;
+      height: 0;
+      width: 10px;
+      box-sizing: content-box;
+      position: relative;
+      margin: 4px 0 10px 0;
+    }
+    .player4Piece:after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: -5px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: purple transparent transparent transparent;
+      border-width: 14px 10px 0 10px;
+    }
     </style>
