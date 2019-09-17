@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="global.css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
+      <link href="assets/css/toolkit.css" rel="stylesheet">
+      <link href="assets/css/application.css" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link rel="stylesheet" href="global.css">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      
+      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700" rel="stylesheet">
+        <script src="portals.js"></script>
+</head>
+    
+<body>
+    
+    <nav class="navbar navbar-expand-sm bg-dark fixed-top">
+            <ul class="navbar-nav gamepicker">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="games.html">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+            </ul>
+    </nav>
+    <div class="header" style="margin-top: 80px">
+        <h1>Portals!</h1>
+    </div>
+    <div class="container startingGame" id="startTheGame">
+            <p>Welcome to Portals! This game is similar to the 'Snakes and Ladders' game we all know and love from our childhoods with a slight sci-fi spin. The snakes and ladders have been replaced with teleporters that weren't calibrated properly! When you land on a portal you can be teleported to any other portal on the board so be careful!</p>
+            
+            <div class="dropdown">
+                <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+                    Number of Human Players
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" id="oneHuman">1</a>
+                    <a class="dropdown-item" id="twoHuman">2</a>
+                    <a class="dropdown-item" id="threeHuman">3</a>
+                    <a class="dropdown-item" id="fourHuman">4</a>
+                </div>
+            </div>
+            
+            <div class="btn btn-outline-success disabled" id="start" style="margin-top: 20px">Let's Start!</div>
+        </div>
+    <div class="container hidden" id="buildingBox">
+        <div class="square-hold" id="sqh-1">
+            <div class="square-land" id="sql-1">
+                <div id="squareA100"></div>
+                <div id="squareB100"></div>
+                <div id="squareC100"></div>
+                <div id="squareD100"></div>
+            </div>
+            <div class="square-land" id="sql-2">
+                <div id="squareA99"></div>
+                <div id="squareB99"></div>
+                <div id="squareC99"></div>
+                <div id="squareD99"></div>
+            </div>
+            <div class="square-land" id="sql-3">
+                <div id="squareA98"></div>
+                <div id="squareB98"></div>
+                <div id="squareC98"></div>
+                <div id="squareD98"></div>
+            </div>
+            <div class="square-land" id="sql-4">
+                <div id="squareA97"></div>
+                <div id="squareB97"></div>
+                <div id="squareC97"></div>
+                <div id="squareD97"></div>
+            </div>
+            <div class="square-land" id="sql-5">
+                <div id="squareA96"></div>
+                <div id="squareB96"></div>
+                <div id="squareC96"></div>
+                <div id="squareD96"></div>
+            </div>
+            <div class="square-land" id="sql-6">
+                <div id="squareA95"></div>
+                <div id="squareB95"></div>
+                <div id="squareC95"></div>
+                <div id="squareD95"></div>
+            </div>
+            <div class="square-land" id="sql-7">
+                <div id="squareA94"></div>
+                <div id="squareB94"></div>
+                <div id="squareC94"></div>
+                <div id="squareD94"></div>
+            </div>
+            <div class="square-land" id="sql-8">
+                <div id="squareA93"></div>
+                <div id="squareB93"></div>
+                <div id="squareC93"></div>
+                <div id="squareD93"></div>
+            </div>
+            <div class="square-land" id="sql-9">
+                <div id="squareA92"></div>
+                <div id="squareB92"></div>
+                <div id="squareC92"></div>
+                <div id="squareD92"></div>
+            </div>
+            <div class="square-land" id="sql-10">
+                <div id="squareA91"></div>
+                <div id="squareB91"></div>
+                <div id="squareC91"></div>
+                <div id="squareD91"></div>
+            </div>
+        </div>
+        <div class="square-hold" id="sqh-2">
+            <div class="square-land" id="sql-11">
+                <div id="squareA90"></div>
+                <div id="squareB90"></div>
+                <div id="squareC90"></div>
+                <div id="squareD90"></div>
+            </div>
+            <div class="square-land" id="sql-12">
+                <div id="squareA89"></div>
+                <div id="squareB89"></div>
+                <div id="squareC89"></div>
+                <div id="squareD89"></div>
+            </div>
+            <div class="square-land" id="sql-13">
+                <div id="squareA88"></div>
+                <div id="squareB88"></div>
+                <div id="squareC88"></div>
+                <div id="squareD88"></div>
+            </div>
+            <div class="square-land" id="sql-14">
+                <div id="squareA87"></div>
+                <div id="squareB87"></div>
+                <div id="squareC87"></div>
+                <div id="squareD87"></div>
+            </div>
+            <div class="square-land" id="sql-15">
+                <div id="squareA86"></div>
+                <div id="squareB86"></div>
+                <div id="squareC86"></div>
+                <div id="squareD86"></div>
+            </div>
+            <div class="square-land" id="sql-16">
+                <div id="squareA85"></div>
+                <div id="squareB85"></div>
+                <div id="squareC85"></div>
+                <div id="squareD85"></div>
+            </div>
+            <div class="square-land" id="sql-17">
+                <div id="squareA84"></div>
+                <div id="squareB84"></div>
+                <div id="squareC84"></div>
+                <div id="squareD84"></div>
+            </div>
+            <div class="square-land" id="sql-18">
+                <div id="squareA83"></div>
+                <div id="squareB83"></div>
+                <div id="squareC83"></div>
+                <div id="squareD83"></div>
+            </div>
+            <div class="square-land" id="sql-19">
+                <div id="squareA82"></div>
+                <div id="squareB82"></div>
+                <div id="squareC82"></div>
+                <div id="squareD82"></div>
+            </div>
+            <div class="square-land" id="sql-20">
+                <div id="squareA81"></div>
+                <div id="squareB81"></div>
+                <div id="squareC81"></div>
+                <div id="squareD81"></div>
+            </div>
+        </div>
+        <div class="square-hold" id="sqh-3">
+            <div class="square-land" id="sql-21">
+                <div id="squareA80"></div>
+                <div id="squareB80"></div>
+                <div id="squareC80"></div>
+                <div id="squareD80"></div>
+            </div>
+            <div class="square-land" id="sql-22">
+                <div id="squareA79"></div>
+                <div id="squareB79"></div>
+                <div id="squareC79"></div>
+                <div id="squareD79"></div>
+            </div>
+            <div class="square-land" id="sql-23">
+                <div id="squareA78"></div>
+                <div id="squareB78"></div>
+                <div id="squareC78"></div>
+                <div id="squareD78"></div>
+            </div>
+            <div class="square-land" id="sql-24">
+                <div id="squareA77"></div>
+                <div id="squareB77"></div>
+                <div id="squareC77"></div>
+                <div id="squareD77"></div>  
+            </div>
+            <div class="square-land" id="sql-25">
+                <div id="squareA76"></div>
+                <div id="squareB76"></div>
+                <div id="squareC76"></div>
+                <div id="squareD76"></div>
+            </div>
+            <div class="square-land" id="sql-26">
+                <div id="squareA75"></div>
+                <div id="squareB75"></div>
+                <div id="squareC75"></div>
+                <div id="squareD75"></div>
+            </div>  
+            <div class="square-land" id="sql-27">
+                <div id="squareA74"></div>
+                <div id="squareB74"></div>
+                <div id="squareC74"></div>
+                <div id="squareD74"></div>
+            </div>
+            <div class="square-land" id="sql-28">
+                <div id="squareA73"></div>
+                <div id="squareB73"></div>
+                <div id="squareC73"></div>
+                <div id="squareD73"></div>
+            </div>
+            <div class="square-land" id="sql-29">
+                <div id="squareA72"></div>
+                <div id="squareB72"></div>
+                <div id="squareC72"></div>
+                <div id="squareD72"></div>
+            </div>
+            <div class="square-land" id="sql-30">
+                <div id="squareA71"></div>
+                <div id="squareB71"></div>
+                <div id="squareC71"></div>
+                <div id="squareD71"></div>
+            </div>
+        </div>
+        <div class="square-hold" id="sqh-4">
+            <div class="square-land" id="sql-31">
+                <div id="squareA70"></div>
+                <div id="squareB70"></div>
+                <div id="squareC70"></div>
+                <div id="squareD70"></div>
+            </div>
+            <div class="square-land" id="sql-32">
+                <div id="squareA69"></div>
+                <div id="squareB69"></div>
+                <div id="squareC69"></div>
+                <div id="squareD69"></div>
+            </div>
+            <div class="square-land" id="sql-33">
+                <div id="squareA68"></div>
+                <div id="squareB68"></div>
+                <div id="squareC68"></div>
+                <div id="squareD68"></div>
+            </div>
+            <div class="square-land" id="sql-34">
+                <div id="squareA67"></div>
+                <div id="squareB67"></div>
+                <div id="squareC67"></div>
+                <div id="squareD67"></div>
+            </div>
+            <div class="square-land" id="sql-35">
+                <div id="squareA66"></div>
+                <div id="squareB66"></div>
+                <div id="squareC66"></div>
+                <div id="squareD66"></div>
+            </div>
+            <div class="square-land" id="sql-36">
+                <div id="squareA65"></div>
+                <div id="squareB65"></div>
+                <div id="squareC65"></div>
+                <div id="squareD65"></div>
+            </div>
+            <div class="square-land" id="sql-37">
+                <div id="squareA64"></div>
+                <div id="squareB64"></div>
+                <div id="squareC64"></div>
+                <div id="squareD64"></div>
+            </div>
+            <div class="square-land" id="sql-38">
+                <div id="squareA63"></div>
+                <div id="squareB63"></div>
+                <div id="squareC63"></div>
+                <div id="squareD63"></div>
+            </div>
+            <div class="square-land" id="sql-39">
+                <div id="squareA62"></div>
+                <div id="squareB62"></div>
+                <div id="squareC62"></div>
+                <div id="squareD62"></div>
+            </div>
+            <div class="square-land" id="sql-40">
+                <div id="squareA61"></div>
+                <div id="squareB61"></div>
+                <div id="squareC61"></div>
+                <div id="squareD61"></div>
+            </div>
+        </div>
+        <div class="square-hold" id="sqh-5">
+            <div class="square-land" id="sql-41">
+                <div id="squareA60"></div>
+                <div id="squareB60"></div>
+                <div id="squareC60"></div>
+                <div id="squareD60"></div>
+            </div>
+            <div class="square-land" id="sql-42">
+                <div id="squareA59"></div>
+                <div id="squareB59"></div>
+                <div id="squareC59"></div>
+                <div id="squareD59"></div>
+            </div>
+            <div class="square-land" id="sql-43">
+                <div id="squareA58"></div>
+                <div id="squareB58"></div>
+                <div id="squareC58"></div>
+                <div id="squareD58"></div>
+            </div>
+            <div class="square-land" id="sql-44">
+                <div id="squareA57"></div>
+                <div id="squareB57"></div>
+                <div id="squareC57"></div>
+                <div id="squareD57"></div>
+            </div>
+            <div class="square-land" id="sql-45">
+                <div id="squareA56"></div>
+                <div id="squareB56"></div>
+                <div id="squareC56"></div>
+                <div id="squareD56"></div>
+            </div>
+            <div class="square-land" id="sql-46">
+                <div id="squareA55"></div>
+                <div id="squareB55"></div>
+                <div id="squareC55"></div>
+                <div id="squareD55"></div>
+            </div>
+            <div class="square-land" id="sql-47">
+                <div id="squareA54"></div>
+                <div id="squareB54"></div>
+                <div id="squareC54"></div>
+                <div id="squareD54"></div>
+            </div>
+            <div class="square-land" id="sql-48">
+                <div id="squareA53"></div>
+                <div id="squareB53"></div>
+                <div id="squareC53"></div>
+                <div id="squareD53"></div>  
+            </div>
+            <div class="square-land" id="sql-49">
+                <div id="squareA52"></div>
+                <div id="squareB52"></div>
+                <div id="squareC52"></div>
+                <div id="squareD52"></div>
+            </div>
+            <div class="square-land" id="sql-50">
+                <div id="squareA51"></div>
+                <div id="squareB51"></div>
+                <div id="squareC51"></div>
+                <div id="squareD51"></div>
+            </div>
+        </div>
+        <div class="square-hold" id="sqh-6">
+            <div class="square-land" id="sql-51">
+                <div id="squareA50"></div>
+                <div id="squareB50"></div>
+                <div id="squareC50"></div>
+                <div id="squareD50"></div>
+            </div>
+            <div class="square-land" id="sql-52">
+                <div id="squareA49"></div>
+                <div id="squareB49"></div>
+                <div id="squareC49"></div>
+                <div id="squareD49"></div>
+            </div>
+            <div class="square-land" id="sql-53">
+                <div id="squareA48"></div>
+                <div id="squareB48"></div>
+                <div id="squareC48"></div>
+                <div id="squareD48"></div>
+            </div>
+            <div class="square-land" id="sql-54">
+                <div id="squareA47"></div>
+                <div id="squareB47"></div>
+                <div id="squareC47"></div>
+                <div id="squareD47"></div>
+            </div>
+            <div class="square-land" id="sql-55">
+                <div id="squareA46"></div>
+                <div id="squareB46"></div>
+                <div id="squareC46"></div>
+                <div id="squareD46"></div>
+            </div>
+            <div class="square-land" id="sql-56">
+                <div id="squareA45"></div>
+                <div id="squareB45"></div>
+                <div id="squareC45"></div>
+                <div id="squareD45"></div>
+            </div>
+            <div class="square-land" id="sql-57">
+                <div id="squareA44"></div>
+                <div id="squareB44"></div>
+                <div id="squareC44"></div>
+                <div id="squareD44"></div>
+            </div>
+            <div class="square-land" id="sql-58">
+                <div id="squareA43"></div>
+                <div id="squareB43"></div>
+                <div id="squareC43"></div>
+                <div id="squareD43"></div>
+            </div>
+            <div class="square-land" id="sql-59">
+                <div id="squareA42"></div>
+                <div id="squareB42"></div>
+                <div id="squareC42"></div>
+                <div id="squareD42"></div>
+            </div>
+            <div class="square-land" id="sql-60">
+                <div id="squareA41"></div>
+                <div id="squareB41"></div>
+                <div id="squareC41"></div>
+                <div id="squareD41"></div>
+            </div>
+        </div>
+        <div class="square-hold" id="sqh-7">
+            <div class="square-land" id="sql-61">
+                <div id="squareA40"></div>
+                <div id="squareB40"></div>
+                <div id="squareC40"></div>
+                <div id="squareD40"></div>
+            </div>
+            <div class="square-land" id="sql-62">
+                <div id="squareA39"></div>
+                <div id="squareB39"></div>
+                <div id="squareC39"></div>
+                <div id="squareD39"></div>
+            </div>
+            <div class="square-land" id="sql-63">
+                <div id="squareA38"></div>
+                <div id="squareB38"></div>
+                <div id="squareC38"></div>
+                <div id="squareD38"></div>
+            </div>
+            <div class="square-land" id="sql-64">
+                <div id="squareA37"></div>
+                <div id="squareB37"></div>
+                <div id="squareC37"></div>
+                <div id="squareD37"></div>
+            </div>
+            <div class="square-land" id="sql-65">
+                <div id="squareA36"></div>
+                <div id="squareB36"></div>
+                <div id="squareC36"></div>
+                <div id="squareD36"></div>
+            </div>
+            <div class="square-land" id="sql-66">
+                <div id="squareA35"></div>
+                <div id="squareB35"></div>
+                <div id="squareC35"></div>
+                <div id="squareD35"></div>
+            </div>
+            <div class="square-land" id="sql-67">
+                <div id="squareA34"></div>
+                <div id="squareB34"></div>
+                <div id="squareC34"></div>
+                <div id="squareD34"></div>
+            </div>
+            <div class="square-land" id="sql-68">
+                <div id="squareA33"></div>
+                <div id="squareB33"></div>
+                <div id="squareC33"></div>
+                <div id="squareD33"></div>
+            </div>
+            <div class="square-land" id="sql-69">
+                <div id="squareA32"></div>
+                <div id="squareB32"></div>
+                <div id="squareC32"></div>
+                <div id="squareD32"></div>
+            </div>
+            <div class="square-land" id="sql-70">
+                <div id="squareA31"></div>
+                <div id="squareB31"></div>
+                <div id="squareC31"></div>
+                <div id="squareD31"></div>
+            </div>
+        </div>
+        <div class="square-hold" id="sqh-8">
+            <div class="square-land" id="sql-71">
+                <div id="squareA30"></div>
+                <div id="squareB30"></div>
+                <div id="squareC30"></div>
+                <div id="squareD30"></div>
+            </div>
+            <div class="square-land" id="sql-72">
+                <div id="squareA29"></div>
+                <div id="squareB29"></div>
+                <div id="squareC29"></div>
+                <div id="squareD29"></div>
+            </div>
+            <div class="square-land" id="sql-73">
+                <div id="squareA28"></div>
+                <div id="squareB28"></div>
+                <div id="squareC28"></div>
+                <div id="squareD28"></div>
+            </div>
+            <div class="square-land" id="sql-74">
+                <div id="squareA27"></div>
+                <div id="squareB27"></div>
+                <div id="squareC27"></div>
+                <div id="squareD27"></div>
+            </div>
+            <div class="square-land" id="sql-75">
+                <div id="squareA26"></div>
+                <div id="squareB26"></div>
+                <div id="squareC26"></div>
+                <div id="squareD26"></div>
+            </div>
+            <div class="square-land" id="sql-76">
+                <div id="squareA25"></div>
+                <div id="squareB25"></div>
+                <div id="squareC25"></div>
+                <div id="squareD25"></div>
+            </div>
+            <div class="square-land" id="sql-77">
+                <div id="squareA24"></div>
+                <div id="squareB24"></div>
+                <div id="squareC24"></div>
+                <div id="squareD24"></div>
+            </div>
+            <div class="square-land" id="sql-78">
+                <div id="squareA23"></div>
+                <div id="squareB23"></div>
+                <div id="squareC23"></div>
+                <div id="squareD23"></div>
+            </div>
+            <div class="square-land" id="sql-79">
+                <div id="squareA22"></div>
+                <div id="squareB22"></div>
+                <div id="squareC22"></div>
+                <div id="squareD22"></div>
+            </div>
+            <div class="square-land" id="sql-80">
+                <div id="squareA21"></div>
+                <div id="squareB21"></div>
+                <div id="squareC21"></div>
+                <div id="squareD21"></div>
+            </div>
+        </div>
+        <div class="square-hold" id="sqh-9">
+            <div class="square-land" id="sql-81">
+                <div id="squareA20"></div>
+                <div id="squareB20"></div>
+                <div id="squareC20"></div>
+                <div id="squareD20"></div>
+            </div>
+            <div class="square-land" id="sql-82">
+                <div id="squareA19"></div>
+                <div id="squareB19"></div>
+                <div id="squareC19"></div>
+                <div id="squareD19"></div>
+            </div>
+            <div class="square-land" id="sql-83">
+                <div id="squareA18"></div>
+                <div id="squareB18"></div>
+                <div id="squareC18"></div>
+                <div id="squareD18"></div>
+            </div>
+            <div class="square-land" id="sql-84">
+                <div id="squareA17"></div>
+                <div id="squareB17"></div>
+                <div id="squareC17"></div>
+                <div id="squareD17"></div>
+            </div>
+            <div class="square-land" id="sql-85">
+                <div id="squareA16"></div>
+                <div id="squareB16"></div>
+                <div id="squareC16"></div>
+                <div id="squareD16"></div>
+            </div>
+            <div class="square-land" id="sql-86">
+                <div id="squareA15"></div>
+                <div id="squareB15"></div>
+                <div id="squareC15"></div>
+                <div id="squareD15"></div>
+            </div>
+            <div class="square-land" id="sql-87">
+                <div id="squareA14"></div>
+                <div id="squareB14"></div>
+                <div id="squareC14"></div>
+                <div id="squareD14"></div>
+            </div>
+            <div class="square-land" id="sql-88">
+                <div id="squareA13"></div>
+                <div id="squareB13"></div>
+                <div id="squareC13"></div>
+                <div id="squareD13"></div>
+            </div>
+            <div class="square-land" id="sql-89">
+                <div id="squareA12"></div>
+                <div id="squareB12"></div>
+                <div id="squareC12"></div>
+                <div id="squareD12"></div>
+            </div>
+            <div class="square-land" id="sql-90">
+                <div id="squareA11"></div>
+                <div id="squareB11"></div>
+                <div id="squareC11"></div>
+                <div id="squareD11"></div>
+            </div>
+        </div>
+        <div class="square-hold" id="sqh-10">
+            <div class="square-land" id="sql-91">
+                <div id="squareA10"></div>
+                <div id="squareB10"></div>
+                <div id="squareC10"></div>
+                <div id="squareD10"></div>
+            </div>
+            <div class="square-land" id="sql-92">
+                <div id="squareA9"></div>
+                <div id="squareB9"></div>
+                <div id="squareC9"></div>
+                <div id="squareD9"></div>
+            </div>
+            <div class="square-land" id="sql-93">
+                <div id="squareA8"></div>
+                <div id="squareB8"></div>
+                <div id="squareC8"></div>
+                <div id="squareD8"></div>
+            </div>
+            <div class="square-land" id="sql-94">
+                <div id="squareA7"></div>
+                <div id="squareB7"></div>
+                <div id="squareC7"></div>
+                <div id="squareD7"></div>
+            </div>
+            <div class="square-land" id="sql-95">
+                <div id="squareA6"></div>
+                <div id="squareB6"></div>
+                <div id="squareC6"></div>
+                <div id="squareD6"></div>
+            </div>
+            <div class="square-land" id="sql-96">
+                <div id="squareA5"></div>
+                <div id="squareB5"></div>
+                <div id="squareC5"></div>
+                <div id="squareD5"></div>
+            </div>
+            <div class="square-land" id="sql-97">
+                <div id="squareA4"></div>
+                <div id="squareB4"></div>
+                <div id="squareC4"></div>
+                <div id="squareD4"></div>
+            </div>
+            <div class="square-land" id="sql-98">
+                <div id="squareA3"></div>
+                <div id="squareB3"></div>
+                <div id="squareC3"></div>
+                <div id="squareD3"></div>
+            </div>
+            <div class="square-land" id="sql-99">
+                <div id="squareA2"></div>
+                <div id="squareB2"></div>
+                <div id="squareC2"></div>
+                <div id="squareD2"></div>
+            </div>
+            <div class="square-land greenStart" id="sql-100">
+                <div class="player1Piece" id="squareA1"></div>
+                <div class="player2Piece" id="squareB1"></div>
+                <div class="player3Piece" id="squareC1"></div>
+                <div class="player4Piece" id="squareD1"></div>
+            </div>
+        </div>
+        
+        <div class="rollmaker">
+            <p>Player <span id="currentPlayer"></span>roll the dice by clicking the "Roll" button</p>
+            <div class="btn btn-outline-dark" id="roller">Roll</div>
+        </div>
+    
+    </div>
+    <script src="portals.js"></script>
+</body>
+
+
+</html>
